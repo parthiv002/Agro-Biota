@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/menu/menu_main.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_settings"
+        android:title="Settings"
+        android:orderInCategory="1"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_profile"
+        android:title="Profile"
+        android:orderInCategory="2"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_help"
+        android:title="Help"
+        android:orderInCategory="3"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_alter_theme"
+        android:title="Alter Theme"
+        android:orderInCategory="4"
+        android:checkable="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_report_issue"
+        android:title="Report Issue"
+        android:orderInCategory="5"
+        app:showAsAction="never" />
+</menu>

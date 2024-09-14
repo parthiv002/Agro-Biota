@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomSearchView" parent="Widget.AppCompat.SearchView">
+        <item name="queryBackground">@android:color/transparent</item>
+        <item name="android:textColorHint">#808080</item> <!-- Hint text color -->
+        <!-- Custom icon -->
+    </style>
+
+
+</resources>
