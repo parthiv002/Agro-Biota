@@ -7,8 +7,7 @@
         android:required="false" />
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -20,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SIH_app_demo"
         tools:targetApi="31">
+        <activity
+            android:name=".DiseaseDiagnosisActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

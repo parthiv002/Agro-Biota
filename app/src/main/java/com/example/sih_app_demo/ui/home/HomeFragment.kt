@@ -15,8 +15,8 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.sih_app_demo.DiseaseDiagnosisActivity
 import com.example.sih_app_demo.R
 import com.example.sih_app_demo.databinding.FragmentHomeBinding
 import com.example.sih_app_demo.trendingVideos.YouTubeApiService
@@ -41,6 +41,7 @@ class HomeFragment : Fragment() {
     private val apiKey = "AIzaSyDqoPuL5dTRSEKNjmbT5xCcm5flNmWJrfI"
     private val query = "plant animal disease prevention"
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -48,6 +49,7 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
 
         // Find the Take a Picture button and set a click listener
         val takePictureButton: Button = binding.btnTakePicture
@@ -60,6 +62,19 @@ class HomeFragment : Fragment() {
                     arrayOf(Manifest.permission.CAMERA), REQUEST_CAMERA_PERMISSION)
             }
         }
+
+        // Set up click listeners for the buttons in DiseaseDiagnosticActivity
+//        val askExpertButton: Button = binding.button_ask_expert // Replace with your actual button reference
+//        askExpertButton.setOnClickListener {
+//            // Handle ask an expert button click
+//            Toast.makeText(context, "Ask an expert button clicked!", Toast.LENGTH_SHORT).show()
+//        }
+//
+//        val askCommunityButton: Button = binding.button_ask_in_community // Replace with your actual button reference
+//        askCommunityButton.setOnClickListener {
+//            // Handle ask in community button click
+//            Toast.makeText(context, "Ask in community button clicked!", Toast.LENGTH_SHORT).show()
+//        }
 
         return root
     }
@@ -120,9 +135,18 @@ class HomeFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-            // Handle the image capture result here
+            // Assume you are collecting the images in a list
+            val imageBitmap = data?.extras?.get("data") as? Uri
+            // Store the images in a list for the carousel
+            val imageList = ArrayList<Int>() // Collect your image resource IDs here
+
+            // Navigate to disease diagnostic page after image confirmation
+            val intent = Intent(requireContext(), DiseaseDiagnosisActivity::class.java)
+            intent.putIntegerArrayListExtra("imageList", imageList)
+            startActivity(intent)
         }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

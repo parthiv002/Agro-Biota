@@ -9,6 +9,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.sih_app_demo.carousel.CarouselAdapter
 import com.example.sih_app_demo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
